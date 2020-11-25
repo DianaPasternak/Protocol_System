@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ProtocolSystem.Models.DB.Users>
+@using System.Security.Claims
+
+
+
+<h2>Особи в базі даних</h2>
+<h5>Введіть серію паспорта</h5>
+<input type="text" placeholder="Серія паспорта"/>
+<button>Пошук</button><br /><br />
+<a asp-action="Register" asp-controller="Account">Додати особу</a>
+@if (User.Identity.IsAuthenticated && User.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType).Value == "admin")
+{
+    <div class="container controll-block">
+        <div class="btn-group btn-group-justified control-buttons">
+            <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i>Додати нового користувача</a>
+            <a asp-action="Create" class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true"></i>Видалити усі</a>
+        </div>
+    </div>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Ім'я
+            </th>
+            <th>
+                Унікальний номер
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

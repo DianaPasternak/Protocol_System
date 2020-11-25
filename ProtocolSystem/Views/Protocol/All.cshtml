@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ProtocolSystem.Models.DB.Protocols>
+
+
+@{
+    ViewData["Title"] = "MyProtocols";
+}
+
+@using System.Security.Claims
+
+
+<form asp-action="All">
+    <h2>Усі протоколи</h2>
+    <h5>Введіть номер протоколу</h5>
+    <input type="text" name="protocolNumber" placeholder="Номер протоколу" />
+    <input type="submit" value="Пошук" />
+</form>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Номер протоколу
+            </th>
+            <th>
+                Особа, що склала протокол
+            </th>
+            <th>
+                Особа, що порушила
+            </th>
+            <th>
+                Дата
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User1.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User2.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProtocolDate)
+            </td>
+            @if (User.Identity.IsAuthenticated@*&& User.FindFirst(x => x.Type == ClaimsIdentity.DefaultRoleClaimType).Value == "Citizen"*@)
+            {
+                <td>
+                    <a asp-area="" asp-controller="Protocol" asp-action="GeneratePdf" asp-route-id="@item.Id">Згенерувати ПДФ</a> <br /><br />
+                    <a asp-area="" asp-controller="Protocol" asp-action="Details" asp-route-id="@item.Id">Деталі протоколу</a>
+                </td>
+            }
+        </tr>
+
+        }
+    </tbody>
+</table>
+
+

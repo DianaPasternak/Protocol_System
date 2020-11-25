@@ -1,0 +1,28 @@
+﻿@model ProtocolSystem.Models.LoginModel
+<link rel="stylesheet" href="~/css/site.css" />
+@{
+    ViewData["Title"] = "Login";
+}
+<h2 style="text-align: center">Вхід на сайт</h2>
+<form asp-action="Login" asp-controller="Account" asp-anti-forgery="true" class="form">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <div>
+        <div class="form-group">
+            <label asp-for="Email">Введіть ім'я користувача</label>
+            <input type="text" asp-for="Email" class="form-control" placeholder="Ім'я користувача" />
+            <span asp-validation-for="Email" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">Введіть пароль</label>
+            <input asp-for="Password" class="form-control" placeholder="Пароль" />
+            <span asp-validation-for="Password" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Увійти" class="btn btn-lg btn-primary btn-block" />
+        </div>
+
+        <a asp-action="Register" class="btn btn-lg btn-primary btn-block" asp-controller="Account">Реєстрація</a>
+    </div>
+</form>
+
+

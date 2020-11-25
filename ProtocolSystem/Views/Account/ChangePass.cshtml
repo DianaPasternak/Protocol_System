@@ -1,0 +1,78 @@
+﻿@model ProtocolSystem.Models.DB.Users
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<h2>Редагування профілю</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="ChangePass" class="form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Новий пароль</label>
+                <input asp-for="Password" class="form-control" placeholder="Новий пароль" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name">Ім'я Adm/Euro</label>
+                <input type="text" asp-for="Name" class="form-control" placeholder="Ім'я користувача" />
+                <span asp-validation-for="Name" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname">Прізвище Adm/Euro</label>
+                <input type="text" asp-for="Surname" class="form-control" placeholder="Прізвище користувача" />
+                <span asp-validation-for="Surname" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DrivingLicenceId">Номер водійського посвідчення Adm/Euro</label>
+                <input type="text" asp-for="DrivingLicenceId" class="form-control" placeholder="Номер водійського посвідчення користувача/>
+                <span asp-validation-for="DrivingLicenceId" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfBirth">Дата народження Adm/Euro</label>
+                <input type="text" asp-for="DateOfBirth" class="form-control" placeholder="Дата народження користвача"/>
+                <span asp-validation-for="DateOfBirth" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Address">Адреса прописки Adm/Euro</label>
+                <input type="text" asp-for="Address" class="form-control" placeholder="Адреса прописки користувача" />
+                <span asp-validation-for="Address" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DrivingLicenceData">Дані водійського посвідчення (категорія та дата закінчення дії) Euro</label>
+                <input type="text" asp-for="DrivingLicenceData" class="form-control" placeholder="Дані водійського посвідчення" />
+                <span asp-validation-for="DrivingLicenceData" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Citizenship">Громадянство Adm</label>
+                <input type="text" asp-for="Citizenship" class="form-control" placeholder="Громадянство коистувача" />
+                <span asp-validation-for="Citizenship" />
+            </div>
+            <div class="form-group">
+                <label asp-for="PlaceOfWork">Місце роботи (назва організації) Adm</label>
+                <input type="text" asp-for="PlaceOfWork" class="form-control" placeholder="Місце роботи користувача" />
+                <span asp-validation-for="PlaceOfWork" />
+            </div>
+            <div class="form-group">
+                <label asp-for="PassportData">Паспортні дані (серія та номер паспорта) Adm</label>
+                <input type="text" asp-for="PassportData" class="form-control" placeholder="Паспортні дані користувача" />
+                <span asp-validation-for="PassportData" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Post">Посада працівника правоохоронних служб та звання Adm (для поліцейського тут відображати лише прізвище, ім'я, посаду</label>
+                <input type="text" asp-for="Post" class="form-control" placeholder="Посада працівника правоохоронних органів" />
+                <span asp-validation-for="Post" />
+            </div>
+                <div class="form-group">
+                    <input type="submit" value="Зберегти" class="btn btn-lg btn-primary btn-block" />
+                </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Home">Назад</a>
+</div>

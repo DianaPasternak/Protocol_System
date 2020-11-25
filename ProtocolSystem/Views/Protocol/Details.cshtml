@@ -1,0 +1,45 @@
+﻿
+@model ProtocolSystem.Models.DB.Protocols
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    dt {
+        width: 307px !important;
+        padding-right: 20px;
+    }
+</style>
+
+<h2>Деталі</h2>
+<h4>Протокол # @Model.Id</h4>
+<div class="informationAboutStaff">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Номер протоколу
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            Країна
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+        <dt>
+            Особа, яка створила протокол
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.User1.Email)
+        </dd>
+        <dt>
+            Особа, на яку було створено протокол
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.User2.Email)
+        </dd>
+    </dl>
+</div>

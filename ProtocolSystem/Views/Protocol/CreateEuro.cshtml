@@ -1,0 +1,100 @@
+﻿
+@model ProtocolSystem.Models.DB.Protocols
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Створення Європротоколу</h2>
+
+<form asp-action="Create" class="form">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="IncidentDate" class="control-label">Дата пригоди</label>
+        <input asp-for="IncidentDate" class="form-control" />
+        <span asp-validation-for="IncidentDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IncidentPlace" class="control-label">Місце пригоди</label>
+        <input asp-for="IncidentPlace" class="form-control" />
+        <span asp-validation-for="IncidentDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Country" class="control-label">Країна, у якій сталася пригода</label>
+        <input asp-for="Country" class="form-control" />
+        <span asp-validation-for="Country" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="VehicleBrand1" class="control-label">Марка та модель транспортного засобу A</label>
+        <input asp-for="VehicleBrand1" class="form-control" />
+        <span asp-validation-for="VehicleBrand1" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="VehicleId1" class="control-label">Номерний знак транспортного засобу A</label>
+        <input asp-for="VehicleId1" class="form-control" />
+        <span asp-validation-for="VehicleId1" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RegistrationCountry1" class="control-label">Країна реєстрації транспортного засобу A</label>
+        <input asp-for="RegistrationCountry1" class="form-control" />
+        <span asp-validation-for="RegistrationCountry1" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Damage1" class="control-label">Шкода, завдана стороні А</label>
+        <input asp-for="Damage1" class="form-control" />
+        <span asp-validation-for="Damage1" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="InsurantId1" class="control-label">Унікальний номер страхувальника А</label>
+        <input asp-for="InsurantId1" class="form-control" />
+        <span asp-validation-for="InsurantId1" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="VehicleBrand2" class="control-label">Марка та модель транспортного засобу B </label>
+        <input asp-for="VehicleBrand2" class="form-control" />
+        <span asp-validation-for="VehicleBrand2" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="VehicleId2" class="control-label">Номерний знак транспортного засобу B</label>
+        <input asp-for="VehicleId2" class="form-control" />
+        <span asp-validation-for="VehicleId2" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RegistrationCountry2" class="control-label">Країна реєстрації транспортного засобу B</label>
+        <input asp-for="RegistrationCountry2" class="form-control" />
+        <span asp-validation-for="RegistrationCountry2" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Damage2" class="control-label">Шкода, завдана стороні B</label>
+        <input asp-for="Damage2" class="form-control" />
+        <span asp-validation-for="Damage2" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="InsurantId2" class="control-label">Унікальний номер страхувальника B</label>
+        <input asp-for="InsurantId2" class="form-control" />
+        <span asp-validation-for="InsurantId2" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IncidentDescription" class="control-label">Опис пригоди</label>
+        <input asp-for="IncidentDescription" class="form-control" />
+        <span asp-validation-for="IncidentDescription" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="WitnessData" class="control-label">Інформація про свідків</label>
+        <input asp-for="WitnessData" class="form-control" />
+        <span asp-validation-for="WitnessData" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="User2Id" class="control-label">Унікальний номер особи особи B</label> <br />
+        <a asp-action="Users" asp-controller="Protocol">Дізнатися унікальний номер особи</a>
+        <input asp-for="User2Id" class="form-control" />
+        <span asp-validation-for="User2Id" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Додати" class="btn btn-lg btn-primary btn-block" />
+    </div>
+</form>
+

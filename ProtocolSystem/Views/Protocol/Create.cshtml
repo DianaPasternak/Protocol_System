@@ -1,0 +1,83 @@
+﻿
+@model ProtocolSystem.Models.DB.Protocols
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Створення Адмінпротоколу</h2>
+
+<form asp-action="Create" class="form">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Series" class="control-label">Серія протоколу</label>
+        <input asp-for="Series" class="form-control" />
+        <span asp-validation-for="Series" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProtocolDate" class="control-label">Дата складання протоколу</label>
+        <input asp-for="ProtocolDate" class="form-control" />
+        <span asp-validation-for="ProtocolDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ProtocolPlace" class="control-label">Місце складання протоколу</label>
+        <input asp-for="ProtocolPlace" class="form-control" />
+        <span asp-validation-for="ProtocolPlace" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="VehicleBrand1" class="control-label">Марка та модель транспортного засобу A</label>
+        <input asp-for="VehicleBrand1" class="form-control" />
+        <span asp-validation-for="VehicleBrand1" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="VehicleId1" class="control-label">Номерний знак транспортного засобу A</label>
+        <input asp-for="VehicleId1" class="form-control" />
+        <span asp-validation-for="VehicleId1" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IncidentDate" class="control-label">Дата пригоди</label>
+        <input asp-for="IncidentDate" class="form-control" />
+        <span asp-validation-for="IncidentDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IncidentDescription" class="control-label">Опис пригоди</label>
+        <input asp-for="IncidentDescription" class="form-control" />
+        <span asp-validation-for="IncidentDescription" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RuleId" class="control-label">Пункт Правил дорожнього руху, який порушено</label>
+        <input asp-for="RuleId" class="form-control" />
+        <span asp-validation-for="RuleId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LawArticle" class="control-label">Стаття КУпАП (частина)</label>
+        <input asp-for="LawArticle" class="form-control" />
+        <span asp-validation-for="LawArticle" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WitnessData" class="control-label">Інформація про свідків</label>
+        <input asp-for="WitnessData" class="form-control" />
+        <span asp-validation-for="WitnessData" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConsiderationDate" class="control-label">Дата розгляду справи</label>
+        <input asp-for="ConsiderationDate" class="form-control" />
+        <span asp-validation-for="ConsiderationDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ConsiderationPlace" class="control-label">Місце розгляду справи</label>
+        <input asp-for="ConsiderationPlace" class="form-control" />
+        <span asp-validation-for="ConsiderationPlace" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="User2Id" class="control-label">Унікальний номер особи, що вчинила злочин</label> <br />
+        <a asp-action="Users" asp-controller="Protocol">Дізнатися унікальний номер особи</a>
+        <input asp-for="User2Id" class="form-control" />
+        <span asp-validation-for="User2Id" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Додати" class="btn btn-lg btn-primary btn-block" />
+    </div>
+</form>
+             
